@@ -20,12 +20,16 @@ const CardRank = () => (
 
       {/* Mobile Progress */}
       <div className="w-full bg-gray-700 rounded-full overflow-hidden mt-2 block md:hidden">
-        <div className="h-2 bg-[#FF7C48] rounded-full" style={{ width: "80%" }}></div>
+        <div
+          className="h-2 bg-[#FF7C48] rounded-full"
+          style={{ width: "80%" }}
+        ></div>
       </div>
 
       <div className="flex items-center gap-3">
         <p className="text-[14px]">
-          Next Rank Turtle <br />500.00% to next level
+          Next Rank Turtle <br />
+          500.00% to next level
         </p>
         <Image src="/images/tur.png" alt="turtle" width={30} height={30} />
       </div>
@@ -33,12 +37,17 @@ const CardRank = () => (
 
     {/* Desktop Progress */}
     <div className="w-full bg-gray-700 rounded-full overflow-hidden mt-2 hidden md:block">
-      <div className="h-2 bg-[#FF7C48] rounded-full" style={{ width: "80%" }}></div>
+      <div
+        className="h-2 bg-[#FF7C48] rounded-full"
+        style={{ width: "80%" }}
+      ></div>
     </div>
 
     {/* Footer */}
     <div className="mt-5 md:mt-2 flex flex-col-reverse md:flex-row gap-4 justify-between text-center">
-      <p className="text-[#2FD9FF] text-[15px]">You need 13.53K more $TAPZI coins to level up</p>
+      <p className="text-[#2FD9FF] text-[15px]">
+        You need 13.53K more $TAPZI coins to level up
+      </p>
       <Button asChild>
         <Link href="/buy">BUY NOW</Link>
       </Button>
@@ -48,7 +57,11 @@ const CardRank = () => (
 
 // Simple Centered Card (Card 2 & 3)
 const CardSimple = ({ icon, title, subtitle, hoverShadow }) => (
-  <div className={`w-full h-full p-4 rounded-lg bg-(--primary-card-bg) border border-(--primary-border) hover:shadow-[0_0_20px_${hoverShadow}] transition-shadow duration-300 flex flex-col justify-center`}>
+  <div
+    className={`w-full h-full p-4 rounded-lg bg-(--primary-card-bg) border border-(--primary-border)
+   hover:shadow-[0_0_20px_var(--shadow-color)] transition-shadow duration-300 flex flex-col justify-center`}
+    style={{ "--shadow-color": hoverShadow }}
+  >
     <div className="flex items-center justify-center gap-2 px-3">
       <Image src={icon} width={50} height={50} alt={title} />
       <div>
@@ -67,8 +80,18 @@ const TopCards = () => (
 
     {/* Card 2 + Card 3 */}
     <div className="flex flex-col lg:flex-row gap-3 flex-1">
-      <CardSimple icon="/images/startb.png" title="# Rank 31" subtitle="0x1Dec...1bC" hoverShadow="#0B91FF47" />
-      <CardSimple icon="/images/dollarb.png" title="Total Transactions" subtitle="0.00" hoverShadow="#633CF042" />
+      <CardSimple
+        icon="/images/startb.png"
+        title="# Rank 31"
+        subtitle="0x1Dec...1bC"
+        hoverShadow="#0B91FF47"
+      />
+      <CardSimple
+        icon="/images/dollarb.png"
+        title="Total Transactions"
+        subtitle="0.00"
+        hoverShadow="#633CF042"
+      />
     </div>
   </div>
 );

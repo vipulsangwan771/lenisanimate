@@ -80,7 +80,9 @@
   --primary-bg: #010121;
   --primary-green: #4aff6b;
   --primary-border: #41298f;
-  --primary-card-bg: #07012A;
+  --primary-card-bg: #07012a;
+  --seconday-bg: #19133c;
+  --primary-sky: #3cdbdc;
 }
 
 .dark {
@@ -124,4 +126,23 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes spin-fast {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  } /* 2 full spins per second */
+}
+
+.spin-3x {
+  animation: spin-fast 1s linear; /* 1 second = 3-4 fast spins */
+}
+.bgmainimage {
+  background-image: url("/images/ellip.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
