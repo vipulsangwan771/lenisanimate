@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import {
-  LineChart,
+  ComposedChart,
   Line,
   XAxis,
   YAxis,
@@ -73,7 +73,15 @@ export default function RevenueUsersChart() {
       {/* Chart */}
       <div className="w-full  min-h-[300px]">
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
+          <ComposedChart data={data}>
+            <defs>
+              <linearGradient id="colorFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#27E3E4" stopOpacity={0.55} />
+                <stop offset="70%" stopColor="#27E3E4" stopOpacity={0.25} />
+                <stop offset="100%" stopColor="#27E3E4" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+
             <CartesianGrid
               strokeDasharray="3 3"
               stroke="rgba(255,255,255,0.1)"
@@ -94,26 +102,24 @@ export default function RevenueUsersChart() {
               }}
             />
 
-            {/* ✅ FILLED AREA */}
+            {/* ✅ FILLS entire area under the line */}
             <Area
               type="monotone"
               dataKey={type}
-              baseValue={0}
-              fill="#27E3E4"
-              fillOpacity={0.25}
+              fill="url(#colorFill)"
               stroke="none"
+              baseValue={0}
             />
 
-            {/* ✅ LINE */}
+            {/* ✅ LINE ABOVE IT */}
             <Line
               type="monotone"
               dataKey={type}
               stroke="#27E3E4"
               strokeWidth={3}
               dot={false}
-              filter="url(#glow)" // optional glow
             />
-          </LineChart>
+          </ComposedChart>
         </ResponsiveContainer>
       </div>
     </div>

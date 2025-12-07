@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,12 +8,20 @@ import { IoArrowUpOutline } from "react-icons/io5";
 
 // Card 1 (Complex Layout)
 const CardRank = () => (
-  <div className="w-full lg:w-[40%] p-4 rounded-lg bg-(--primary-card-bg) 
-  border border-(--primary-border) hover:shadow-[0_0_20px_#FFDB4E33] transition-shadow duration-300">
+  <div
+    className="w-full lg:w-[40%] p-4 rounded-lg bg-(--primary-card-bg) 
+  border border-(--primary-border) hover:shadow-[0_0_20px_#FFDB4E33] transition-shadow duration-300"
+  >
     {/* Header */}
     <div className="flex items-center flex-col lg:flex-row justify-between gap-3">
       <div className="flex w-full text-left  items-center flex-col lg:flex-row gap-3">
-        <Image src="/images/crab.png" className="w-10 h-10" alt="crab" width={30} height={30} />
+        <Image
+          src="/images/crab.png"
+          className="w-10 h-10"
+          alt="crab"
+          width={30}
+          height={30}
+        />
         <div className="w-full">
           <p className="text-[10px]">Your Current Rank</p>
           <h2 className="lg:text-[20px] text-sm">
@@ -46,7 +54,6 @@ const CardRank = () => (
         style={{ width: "80%" }}
       ></div>
     </div>
-    
 
     {/* Footer */}
     <div className="mt-5 md:mt-3 flex flex-col-reverse md:flex-row gap-4 justify-between items-center text-center">
@@ -111,7 +118,13 @@ const CardSimple2 = ({ icon, title, subtitle, hoverShadow }) => (
 const TopCards = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   return (
     <div className="flex gap-3 h-fit">
       {/* Card 1 */}
