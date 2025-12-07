@@ -112,13 +112,13 @@ const OrderPage = () => {
                   />
                 </div>
 
-                <div className={`${card.textColor} font-bold`}>
+                <div className={`${card.textColor} text-base md:text-lg font-bold`}>
                   {card.title}
                 </div>
 
-                <div className="text-white/60 text-sm">{card.value}</div>
+                <div className="text-white/60 text-xs md:text-sm">{card.value}</div>
 
-                <div className="text-white text-md">{card.desc}</div>
+                <div className="text-white text-sm md:text-base">{card.desc}</div>
               </div>
             ))}
           </div>
@@ -126,11 +126,12 @@ const OrderPage = () => {
         <div className="flex flex-col lg:flex-row gap-5 p-5">
           <div className="lg:w-[60%] w-full">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-2xl">Recent Transactions</p>
+              <p className="md:text-2xl text-xl">Recent Transactions</p>
               <div className="">
                 <button
                   onClick={handleButtonClick}
-                  className="border cursor-pointer border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 py-2 flex items-center gap-2"
+                  className="border  text-sm cursor-pointer border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 py-2 
+                  flex items-center gap-2"
                 >
                   {buttonLoading ? (
                     <>
@@ -194,13 +195,13 @@ const OrderPage = () => {
               fee="$0.45"
             />
           </div>
-          <div className="lg:w-[40%] lg:h-[630px] w-full xl:h-[530px] h-[530px] p-5 text-2xl bg-(--primary-card-bg) border border-(--primary-border) rounded-lg">
+          <div className="lg:w-[40%] lg:h-[630px] w-full xl:h-[530px] h-[530px] p-5 bg-(--primary-card-bg) border border-(--primary-border) rounded-lg">
             <div className="flex items-center gap-2 justify-between">
-              <p className="text-2xl">Vesting Schedule</p>
-              <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-xl py-2 flex gap-2">
+              <p className="md:text-2xl text-xl">Vesting Schedule</p>
+              <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-base py-2 flex gap-2">
                 <Image
                   src="/images/flame.png"
-                  alt="flame"
+                  alt="flame" className="w-5 h-5"
                   width={20}
                   height={20}
                 />
@@ -214,11 +215,11 @@ const OrderPage = () => {
               >
                 <div className="flex items-center gap-2 justify-between">
                   <p className="text-sm font-semibold">{item.title}</p>
-                  <p className="text-white/60 text-sm">{item.tge}</p>
+                  <p className="text-white/60 text-xs">{item.tge}</p>
                 </div>
 
                 <div className="flex items-center gap-2 justify-between">
-                  <p className="text-sm text-white/60 font-semibold">
+                  <p className="text-xs text-white/60 font-semibold">
                     {item.subtitle}
                   </p>
                   <p className=" text-(--primary-green) text-sm">

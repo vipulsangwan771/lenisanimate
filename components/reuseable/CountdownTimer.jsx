@@ -44,26 +44,26 @@ const CountdownTimer = () => {
       <div className="gap-3 grid grid-cols-4">
         {/** Box for Days */}
         <div className="bg-(--primary-card-bg) border border-(--primary-border) p-4 px-5 rounded-lg text-center">
-          <p className="text-3xl font-bold">{days}</p>
-          <p className="text-white/60 text-sm">Days</p>
+          <p className="md:text-3xl text-lg font-bold">{days}</p>
+          <p className="text-white/60 text-xs md:text-sm">Days</p>
         </div>
 
         {/** Box for Hours */}
         <div className="bg-(--primary-card-bg) border border-(--primary-border) p-4 px-5 rounded-lg text-center">
-          <p className="text-3xl font-bold">{hours}</p>
-          <p className="text-white/60 text-sm">Hrs</p>
+          <p className="md:text-3xl text-lg font-bold">{hours}</p>
+          <p className="text-white/60 text-xs md:text-sm">Hrs</p>
         </div>
 
         {/** Box for Minutes */}
         <div className="bg-(--primary-card-bg) border border-(--primary-border) p-4 px-5 rounded-lg text-center">
-          <p className="text-3xl font-bold">{minutes}</p>
-          <p className="text-white/60 text-sm">Min</p>
+          <p className="md:text-3xl text-lg font-bold">{minutes}</p>
+          <p className="text-white/60 text-xs md:text-sm">Min</p>
         </div>
 
         {/** Box for Seconds */}
         <div className="bg-(--primary-card-bg) border border-(--primary-border) p-4 px-5 rounded-lg text-center">
-          <p className="text-3xl font-bold">{seconds}</p>
-          <p className="text-white/60 text-sm">Sec</p>
+          <p className="md:text-3xl text-lg font-bold">{seconds}</p>
+          <p className="text-white/60 text-xs md:text-sm">Sec</p>
         </div>
       </div>
     </>

@@ -117,15 +117,15 @@ const page = () => {
           <div className="p-5 w-full xl:w-[60%] bg-(--primary-card-bg) border border-(--primary-border) rounded-lg">
             <div className="flex justify-between gap-3 items-center">
               <div className="">
-                <h2 className="text-2xl">Presale Is Live</h2>
-                <p className="text-white/60">Limited time offer - Act fast!</p>
+                <h2 className="md:text-2xl text-xl">Presale Is Live</h2>
+                <p className="text-white/60 md:text-base text-sm">Limited time offer - Act fast!</p>
               </div>
-              <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-xl py-1 flex gap-2">
+              <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-base py-1 flex gap-2">
                 <Image
                   src="/images/flame.png"
-                  alt="flame"
-                  width={20}
-                  height={20}
+                  alt="flame" className="h-5 w-5"
+                  width={15}
+                  height={1}
                 />
                 LIVE
               </button>
@@ -165,37 +165,39 @@ const page = () => {
               <CountdownTimer />
             </div>
 
-            <div className="mt-5 text-3xl">Choose Payment Method</div>
+            <div className="mt-5 text-lg md:text-3xl">Choose Payment Method</div>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
-              <div className="bg-(--primary-sky) text-(--primary-bg) rounded-md cursor-pointer px-3 py-5 flex gap-3 items-center justify-center">
-                <p className="text-xl">Buy With Crypto</p>
+              <button className="bg-(--primary-sky) hover:bg-(--primary-hover-sky)  text-(--primary-bg) rounded-md
+               cursor-pointer px-3 py-3 flex gap-3 items-center justify-center">
+                <p className="lg:text-xl md:text-sm text-lg">Buy With Crypto</p>
                 <Image
                   src="/images/bitcoin.png"
                   alt="wewc"
                   width={70}
                   height={20}
                 />
-              </div>
-              <div className="bg-(--primary-sky) text-(--primary-bg) rounded-md cursor-pointer px-3 py-5 flex gap-3 items-center justify-center">
-                <p className="text-xl">Buy With Card</p>
+              </button>
+              <button className="bg-(--primary-sky) hover:bg-(--primary-hover-sky) text-(--primary-bg) rounded-md 
+              cursor-pointer px-3 py-3 flex gap-3 items-center justify-center">
+                <p className="lg:text-xl  md:text-base text-lg">Buy With Card</p>
                 <Image
                   src="/images/visa.png"
                   alt="wewc"
                   width={70}
                   height={20}
                 />
-              </div>
+              </button>
             </div>
 
-            <div className="mt-5 rounded-full bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3">
+            <div className="mt-8 rounded-full bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3">
               <div className="flex items-center gap-3 justify-center">
-                <p className="text-xl">
-                  Presale Price ={" "}
+                <p className="md:text-lg text-[10px]">
+                  Presale Price =
                   <span className="text-(--primary-sky)">$0.0035</span>
                 </p>
                 |
-                <p className="text-xl">
-                  Launch Price ={" "}
+                <p className="md:text-lg text-[10px]">
+                  Launch Price =
                   <span className="text-(--primary-sky)">$0.09</span>
                 </p>
               </div>
@@ -203,12 +205,12 @@ const page = () => {
 
             <div className="mt-8 rounded-lg bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3 flex items-center gap-3 justify-between">
               <div className="">
-                <p className="text-sm">You Pay inETH:</p>
-                <p className="text-2xl">1</p>
+                <p className="text-xs">You Pay inETH:</p>
+                <p className="text-xl">1</p>
               </div>
               <button
                 className="bg-(--primary-card-bg) rounded-full border border-(--primary-border) flex items-center gap-1 justify-center
-                px-10 py-2"
+                px-9 py-1"
               >
                 <Image
                   src="/images/eth.png"
@@ -226,48 +228,48 @@ const page = () => {
             </div>
             <div className="mt-3 rounded-lg bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3 flex items-center gap-3 justify-between">
               <div className="">
-                <p className="text-sm">
+                <p className="text-xs">
                   You Receive $TAPZI +
                   <span className="text-(--primary-green)">Advanced NFT</span>
                 </p>
-                <p className="text-2xl">178855.83</p>
+                <p className="text-xl">178855.83</p>
               </div>
               <button
-                className="bg-(--primary-card-bg) rounded-full border border-(--primary-border) flex items-center gap-1 justify-center
-                 px-10 py-2"
+                className="bg-(--primary-card-bg) rounded-full border border-(--primary-border) flex items-center justify-center
+                 px-10 py-1"
               >
                 <Image
                   src="/images/mainlogo.png"
                   alt="eths logo"
-                  width={60}
-                  height={60}
+                  width={50}
+                  height={50}
                 />
               </button>
             </div>
 
             <button
-              className="text-(--primary-bg) bg-(--primary-sky) mt-8 rounded-md cursor-pointer
-            flex justify-center w-full px-3 py-5 text-2xl"
+              className="text-(--primary-bg) bg-(--primary-sky) hover:bg-(--primary-hover-sky) mt-4 rounded-md cursor-pointer
+            flex justify-center w-full px-3 py-4 text-lg md:text-2xl"
             >
               Connect Wallet To Continue
             </button>
 
             <div
-              className="mt-8 mx-4  rounded-lg bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3 
-           text-center "
+              className="mt-5 mx-5  rounded-lg bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3 
+           text-center md:text-sm lg:text-base text-[10px]"
             >
               By continuing, you agree to our terms & conditions.
             </div>
           </div>
 
           <div className="xl:w-[40%]  w-full">
-            <div className="bg-(--primary-card-bg) border w-full border-(--seconday-bg) rounded-lg px-5  py-3">
-              <div className="flex items-center gap-2">
+            <div className="bg-(--primary-card-bg) border w-full border-(--primary-border) rounded-lg px-5  py-3">
+              <div className="flex items-center  justify-center md:justify-start gap-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                   <p className="text-xl">Live Activity</p>
                 </div>
-                <button className=" border border-(--primary-green) text-(--primary-green) px-4 rounded">
+                <button className="text-sm border border-(--primary-green) text-(--primary-green) px-4 rounded">
                   LIVE
                 </button>
               </div>
@@ -304,8 +306,8 @@ const page = () => {
               </div>
             </div>
 
-            <div className="bg-(--primary-card-bg) border w-full border-(--seconday-bg) rounded-lg px-5 w-full mt-5 py-4x">
-              <div className="flex items-center gap-2 justify-around py-3">
+            <div className="bg-(--primary-card-bg) border w-full pb-5 border-(--primary-border) rounded-lg px-5 h-auto w-full mt-5 py-4x">
+              <div className="flex items-center gap-2 justify-around pt-3">
                 <p>Rank</p>
                 <p>Name</p>
                 <p>Value</p>

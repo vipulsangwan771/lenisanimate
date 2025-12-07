@@ -21,7 +21,7 @@ const Navbar = () => {
               <div className="">
                 <div className="">Current Price</div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 mt-1 rounded-full bg-(--primary-green)"></span>
+                  <span className="w-2 h-2 mt-2 rounded-full bg-(--primary-green)"></span>
                   <div className="text-(--primary-green) text-2xl">$0.0035</div>
                 </div>
               </div>

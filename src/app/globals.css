@@ -83,6 +83,7 @@
   --primary-card-bg: #07012a;
   --seconday-bg: #19133c;
   --primary-sky: #3cdbdc;
+  --primary-hover-sky: #cecfd1;
 }
 
 .dark {
@@ -142,7 +143,64 @@
 }
 .bgmainimage {
   background-image: url("/images/ellip.png");
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.main-cardbg-1 {
+  background-image: url("/images/bgcard1.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-2 {
+  background-image: url("/images/bgcard2.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-3 {
+  background-image: url("/images/bgcard3.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-4 {
+  background-image: url("/images/bgcard4.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-5 {
+  background-image: url("/images/bgcard5.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-6 {
+  background-image: url("/images/bgcard6.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.main-cardbg-7 {
+  background-image: url("/images/bgcard7.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+body {
+  overflow: hidden; /* Lenis controls scrolling */
+}
+
+.lenis {
+  height: 100%;
 }

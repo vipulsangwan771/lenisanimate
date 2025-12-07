@@ -83,12 +83,12 @@ const LeaderPage = () => {
                   width={50}
                   height={50}
                 />
-                <div className="text-4xl">Rank 1</div>
+                <div className="md:text-3xl text-1xl">Rank 1</div>
               </div>
-              <p className="text-white/60 text-xl">CryptoWhale</p>
+              <p className="text-white/60 md:text-xl text-lg">CryptoWhale</p>
               <div className="mt-10">
-                <p className="text-white/60">Holdings</p>
-                <p className="text-5xl">5,234,567 $TAPZI</p>
+                <p className="text-white/60 text-lg">Holdings</p>
+                <p className="md:text-4xl text-1xl">5,234,567 $TAPZI</p>
               </div>
             </div>
 

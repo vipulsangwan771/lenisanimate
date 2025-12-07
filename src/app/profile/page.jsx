@@ -16,13 +16,16 @@ const InfoRow = ({ icon, title, value }) => (
       <div className="flex gap-3 items-center">
         <Image src={icon} alt={title} width={20} height={20} />
         <div>
-          <p className="text-xl">{title}</p>
-          <p className="opacity-[70%]" style={{ fontSize: "15px" }}>
+          <p className="md:text-xl text-lg">{title}</p>
+          <p
+            className="opacity-[70%] text-xs md:text-base"
+            style={{ fontSize: "15px" }}
+          >
             Balance: 0.00
           </p>
         </div>
       </div>
-      <p className="text-[#27E3E4]">$0.00</p>
+      <p className="text-[#27E3E4] text-sm md:text-base">$0.00</p>
     </div>
   </div>
 );
@@ -36,7 +39,7 @@ const ProfilePage = () => {
       {/* WALLET SECTION */}
       <div className="flex flex-col lg:flex-row gap-3 h-fit mt-6">
         <div className="w-full lg:w-[73%] bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-4">
-          <h2 className="text-2xl">Wallet</h2>
+          <h2 className="text-3xl text-center md:text-left">Wallet</h2>
 
           {/* Wallet Address Box */}
           <p className="opacity-[70%] mt-5">Wallet Address</p>
@@ -126,7 +129,7 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          <div className="mt-20 text-center">
+          <div className="md:mt-20 mt-6 text-center">
             Name: Tapzi <br />
             Email: tapzi25@gmail.com
           </div>

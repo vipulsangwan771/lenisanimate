@@ -1,4 +1,5 @@
 "use client";
+import ActivityCard from "@/components/reuseable/ActivityCard";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaInstagram, FaDiscord, FaTwitter } from "react-icons/fa";
@@ -32,51 +33,21 @@ const Page = () => {
         <div className="flex gap-3 items-center">
           <Image src={imgSrc} alt={title} width={35} height={35} />
           <div>
-            <p className="text-xl">{title}</p>
-            <p className="text-white/60">{referrals}</p>
+            <p className="text-lg">{title}</p>
+            <p className="text-white/60 text-sm md:text-base">{referrals}</p>
           </div>
         </div>
         <div className="text-right">
-          <p style={{ fontSize: "22px" }}>{commission}</p>
+          <p className="text-sm md:text-base">{commission}</p>
           <p className="text-white/60" style={{ fontSize: "10px" }}>
             Commission
           </p>
-          <p style={{ fontSize: "16px" }}>{amount}</p>
+          <p className="text-sm md:text-base">{amount}</p>
         </div>
       </div>
     );
   };
-  const ActivityCard = ({
-    username,
-    actionText,
-    amount,
-    time,
-    dotColor = "bg-green-500",
-  }) => {
-    return (
-      <div className="mt-4 bg-(--seconday-bg) rounded-lg p-4">
-        <div className="flex items-center gap-4 justify-between">
-          <div className="flex items-center gap-2">
-            <span className={`w-2 h-2 ${dotColor} rounded-full`}></span>
-            <div>
-              <p style={{ fontSize: "15px" }}>{username}</p>
-              <p className="text-white/60" style={{ fontSize: "12px" }}>
-                {actionText}
-              </p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-(--primary-green)" style={{ fontSize: "15px" }}>
-              {amount}
-            </p>
-            <p className="text-white/60" style={{ fontSize: "12px" }}>
-              {time}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
+
   const ReferralStepCard = ({ imgSrc, title, description }) => {
     return (
       <div className="bg-(--seconday-bg) border border-(--seconday-bg) rounded-lg p-5 text-center">
@@ -92,7 +63,7 @@ const Page = () => {
   };
   return (
     <div className="bg-(--primary-bg) min-h-screen p-5 pt-10 text-white">
-      <div className="bg-(--primary-card-bg) border border-(--seconday-bg) rounded-lg px-5 py-3">
+      <div className="bg-(--primary-card-bg) border border-(--primary-border) rounded-lg px-5 py-3">
         <h2 className="text-3xl">Your Referral Link</h2>
         <h4 className="text-white/60 mt-2">
           Share this link with friends to earn rewards when they join
@@ -110,7 +81,7 @@ const Page = () => {
 
           <button
             onClick={copyToClipboard}
-            className="absolute right-3 top-3 bg-[#27E3E4] cursor-pointer text-(--primary-bg) text-sm px-3 py-1 rounded transition-all"
+            className="absolute right-3 top-3 hover:bg-(--primary-hover-sky) bg-[#27E3E4] cursor-pointer text-(--primary-bg) text-sm px-3 py-1 rounded transition-all"
           >
             {copied ? "Copied!" : "Copy"}
           </button>
@@ -122,6 +93,7 @@ const Page = () => {
             {/* Instagram */}
             <FaInstagram
               size={25}
+              className="hover:scale-[1.1] cursor-pointer duration-200 transition-all"
               style={{
                 background:
                   "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)",
@@ -134,6 +106,7 @@ const Page = () => {
             {/* Twitter */}
             <FaTwitter
               size={25}
+              className="hover:scale-[1.1] cursor-pointer duration-200 transition-all"
               style={{
                 color: "#fff",
                 padding: "2px",
@@ -143,7 +116,7 @@ const Page = () => {
             />
             <FaDiscord
               size={25}
-              className="text-white bg-[#5865F2] rounded-full"
+              className="text-white bg-[#5865F2] rounded-full hover:scale-[1.1] cursor-pointer duration-200 transition-all"
               style={{ padding: "2px" }}
             />
 
@@ -153,7 +126,7 @@ const Page = () => {
       </div>
 
       <div className="flex gap-3 justify-between flex-col lg:flex-row mt-4">
-        <div className="bg-(--primary-card-bg) border w-full lg:w-[60%] border-(--seconday-bg) rounded-lg px-5 py-3">
+        <div className="bg-(--primary-card-bg) border w-full lg:w-[60%] border-(--primary-border) rounded-lg px-5 py-3">
           <p className="text-3xl">Referral Tiers</p>
           <ReferralCard
             bgColor="#E4B600"
@@ -191,8 +164,8 @@ const Page = () => {
           />
         </div>
 
-        <div className="bg-(--primary-card-bg) border w-full lg:w-[40%] border-(--seconday-bg) rounded-lg px-5 h-[430px] py-3">
-          <div className="flex items-center gap-2">
+        <div className="bg-(--primary-card-bg) border w-full lg:w-[40%] border-(--primary-border) rounded-lg px-5 h-[430px] py-3">
+          <div className="flex items-center justify-center md:justify-start gap-2">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
               <p className="text-xl">Recent Activity</p>
@@ -231,7 +204,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="bg-(--primary-card-bg) border w-full border-(--seconday-bg) rounded-lg px-5 py-3 mt-4">
+      <div className="bg-(--primary-card-bg) border w-full border-(--primary-border) rounded-lg px-5 py-3 mt-4">
         <p className="text-center pt-10 text-3xl">How It Works</p>
 
         <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center gap-3 mt-4">
