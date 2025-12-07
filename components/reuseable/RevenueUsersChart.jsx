@@ -46,13 +46,12 @@ export default function RevenueUsersChart() {
             >
               {item === "revenue" ? (
                 <>
-                  {" "}
                   <Image
                     src="/images/ref3.png"
                     alt="use"
                     width={15}
                     height={15}
-                  />{" "}
+                  />
                   Revenue
                 </>
               ) : (
@@ -72,8 +71,8 @@ export default function RevenueUsersChart() {
       </div>
 
       {/* Chart */}
-      <div className="w-full h-[300px]">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="w-full  min-h-[300px]">
+        <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data}>
             <CartesianGrid
               strokeDasharray="3 3"
