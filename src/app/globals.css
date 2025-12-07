@@ -197,15 +197,13 @@
   background-size: cover;
   width: auto;
 }
-body {
-  overflow: hidden; /* Lenis controls scrolling */
-}
 
 .lenis {
   height: 100%;
 }
 html,
 body {
+  height: 100%;
   overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
 }
