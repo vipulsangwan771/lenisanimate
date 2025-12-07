@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </div>
         <TopCards />
-        <div className="mt-5">
+        <div className="mt-5 grid grid-cols-1">
           <div className="flex justify-between gap-4 flex-col lg:flex-row">
             <div className="lg:w-[60%] w-full p-5 bg-(--primary-card-bg) rounded-lg border-(--primary-border) border grid grid-cols-1">
               <RevenueUsersChart />
