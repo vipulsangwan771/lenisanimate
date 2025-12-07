@@ -57,7 +57,7 @@ const CardRank = () => (
 
     {/* Footer */}
     <div className="mt-5 md:mt-3 flex flex-col-reverse md:flex-row gap-4 justify-between items-center text-center">
-      <p className="text-[#2FD9FF] text-[15px]">
+      <p className="text-[#2FD9FF] text-[13px]">
         You need 13.53K more $TAPZI coins to level up
       </p>
       <Button asChild>
@@ -77,8 +77,8 @@ const CardSimple = ({ icon, title, subtitle, hoverShadow }) => (
     <div className="flex items-center justify-center gap-2 px-3">
       <Image src={icon} width={50} height={50} alt={title} />
       <div>
-        <p className="opacity-[75%] text-md">{title}</p>
-        <h2 className="text-lg">{subtitle}</h2>
+        <p className="opacity-[75%] text-base xl:text-lg">{title}</p>
+        <h2 className="text-lg xl:text-4xl">{subtitle}</h2>
       </div>
     </div>
   </div>

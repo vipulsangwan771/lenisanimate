@@ -64,7 +64,7 @@ const Page = () => {
   return (
     <div className="bg-(--primary-bg) min-h-screen p-5 pt-10 text-white">
       <div className="bg-(--primary-card-bg) border border-(--primary-border) rounded-lg px-5 py-3">
-        <h2 className="text-3xl">Your Referral Link</h2>
+        <h2 className="text-3xl font-medium">Your Referral Link</h2>
         <h4 className="text-white/60 mt-2">
           Share this link with friends to earn rewards when they join
         </h4>
@@ -127,7 +127,7 @@ const Page = () => {
 
       <div className="flex gap-3 justify-between flex-col lg:flex-row mt-4">
         <div className="bg-(--primary-card-bg) border w-full lg:w-[60%] border-(--primary-border) rounded-lg px-5 py-3">
-          <p className="text-3xl">Referral Tiers</p>
+          <p className="text-3xl font-medium">Referral Tiers</p>
           <ReferralCard
             bgColor="#E4B600"
             imgSrc="/images/gold.png"
@@ -168,7 +168,7 @@ const Page = () => {
           <div className="flex items-center justify-center md:justify-start gap-2">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              <p className="text-xl">Recent Activity</p>
+              <p className="text-xl font-medium">Recent Activity</p>
             </div>
             <button className=" border border-(--primary-green) text-(--primary-green) px-4 rounded">
               LIVE
@@ -205,7 +205,7 @@ const Page = () => {
       </div>
 
       <div className="bg-(--primary-card-bg) border w-full border-(--primary-border) rounded-lg px-5 py-3 mt-4">
-        <p className="text-center pt-10 text-3xl">How It Works</p>
+        <p className="text-center pt-10 text-3xl  font-medium">How It Works</p>
 
         <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center gap-3 mt-4">
           <ReferralStepCard

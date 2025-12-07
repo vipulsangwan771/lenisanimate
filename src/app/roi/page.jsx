@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const RoiPage = () => {
   const [activeTab, setActiveTab] = useState("coin"); // default active
-  const [coinValue, setCoinValue] = useState(0);
+  const [coinValue, setCoinValue] = useState(30);
   const min = 10;
   const max = 100;
 
@@ -16,7 +16,7 @@ const RoiPage = () => {
       >
         <button
           onClick={() => setActiveTab("coin")}
-          className={`md:px-4 px-1 py-2 md:text-base text-sm  w-full font-semibold ${
+          className={`md:px-4 px-1 py-2 md:text-base text-sm w-full font-semibold ${
             activeTab === "coin"
               ? "border-[#27E3E4] bg-[#27E3E4] p-3 text-[#07012A] rounded-lg"
               : "border-transparent text-white/70 hover:text-white cursor-pointer"
@@ -40,7 +40,7 @@ const RoiPage = () => {
       <div className="bg-(--primary-card-bg) p-6 rounded-lg max-w-[1000px] mx-[auto]  border-(--primary-border) border">
         {activeTab === "coin" && (
           <div>
-            <h2 className="md:text-2xl text-base mb-3 text-center">
+            <h2 className="md:text-2xl text-base mb-3 font-bold text-center">
               Calculate your profits on coin launch
             </h2>
             <div className="flex w-full flex-col lg:flex-row gap-3 items-center justify-between">
@@ -102,16 +102,16 @@ const RoiPage = () => {
             </div>
             <div className="mt-5  text-center">
               <div className="flex inline-block border border-(--primary-border) p-4 rounded-full md:rounded-lg bg-(--primary-card-bg)">
-                <span className="md:text-4xl font-extrabold text-[#27E3E4] leading-tight ">
+                <span className="md:text-4xl font-medium text-[#27E3E4] leading-tight ">
                   <span className="text-base font-medium text-white/70 ml-1">
                     Stage
                   </span>
-                  30
+                  {coinValue}
                   <span className="text-base font-medium text-white/70 ml-1">
                     Price
                   </span>
                   ${(0.22 * coinValue).toFixed(2)}
-                  <span className="text-base font-medium text-white/70 ml-1">
+                  <span className=" ml-1">
                     $TAPZI
                   </span>
                 </span>

@@ -13,9 +13,9 @@ const Navbar = () => {
         {pathname === "/" && (
           <div className="flex items-center justify-between gap-4">
             <div className="">
-              <GradientText className="text-3xl">Welcome to Tapzi</GradientText>
+              <GradientText className="text-5xl">Welcome to Tapzi</GradientText>
 
-              <div className="">Your decenttralized command center</div>
+              <div className="xl:text-xl text-lg">Your decenttralized command center</div>
             </div>
             <div className="flex items-center gap-4">
               <div className="">
@@ -36,10 +36,10 @@ const Navbar = () => {
         {pathname === "/buy" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">
+              <GradientText className="text-5xl">
                 Tapzi Token Presale
               </GradientText>
-              <div className="">
+              <div className="xl:text-xl text-lg">
                 Join the future of decentralized finance. Secure your $TAPZI
                 tokens at exclusive presale rates.
               </div>
@@ -49,10 +49,10 @@ const Navbar = () => {
         {pathname === "/orders" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">
+              <GradientText className="text-5xl">
                 Transaction History
               </GradientText>
-              <div className="">
+              <div className="xl:text-xl text-lg">
                 Track all your transactions and token movements
               </div>
             </div>
@@ -61,8 +61,8 @@ const Navbar = () => {
         {pathname === "/profile" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">Profile</GradientText>
-              <div className="">
+              <GradientText className="text-5xl">Profile</GradientText>
+              <div className="xl:text-xl text-lg">
                 Manage your account and track your progress
               </div>
             </div>
@@ -71,18 +71,18 @@ const Navbar = () => {
         {pathname === "/roi" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">ROI Calculator</GradientText>
-              <div className="">Calculate your profits on token launch</div>
+              <GradientText className="text-5xl">ROI Calculator</GradientText>
+              <div className="xl:text-xl text-lg">Calculate your profits on token launch</div>
             </div>
           </div>
         )}
         {pathname === "/leaderboard" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">
+              <GradientText className="text-5xl">
                 Global Leaderboard
               </GradientText>
-              <div className="">
+              <div className="xl:text-xl text-lg">
                 Compete with investors worldwide for exclusive rewards
               </div>
             </div>
@@ -91,8 +91,8 @@ const Navbar = () => {
         {pathname === "/referrals" && (
           <div className="flex items-center justify-center gap-4">
             <div className=" text-center">
-              <GradientText className="text-3xl">Referral Program</GradientText>
-              <div className="">
+              <GradientText className="text-5xl">Referral Program</GradientText>
+              <div className="xl:text-xl text-lg">
                 Earn rewards by inviting friends to join Tapzi
               </div>
             </div>

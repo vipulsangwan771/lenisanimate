@@ -29,7 +29,7 @@ export default function RevenueUsersChart() {
       {/* Toggle Buttons */}
       <div className="flex justify-center flex-col md:flex-row md:justify-between items-center gap-3 mb-4">
         <div className="text-center md:text-left">
-          <p className="md:text-3xl text-lg">Performance Analytics</p>
+          <p className="md:text-3xl text-lg font-medium">Performance Analytics</p>
           <p className="text-white/60 text-xs">Real-Time market insights</p>
         </div>
         <div className="flex items-center gap-3 mb-4">

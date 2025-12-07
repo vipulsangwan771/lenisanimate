@@ -90,7 +90,7 @@ const OrderPage = () => {
   return (
     <>
       <div className="bg-(--primary-bg) min-h-screen w-full pt-5 text-white">
-        <div className="pb-4 px-5 text-xl border-b border-gray-700 text-center">
+        <div className="pb-4 px-5 text-2xl border-b border-gray-700 text-center  font-bold">
           Portfolio Overview
         </div>
 
@@ -112,7 +112,7 @@ const OrderPage = () => {
                   />
                 </div>
 
-                <div className={`${card.textColor} text-base md:text-lg font-bold`}>
+                <div className={`${card.textColor} text-base md:text-lg font-medium`}>
                   {card.title}
                 </div>
 
@@ -126,7 +126,7 @@ const OrderPage = () => {
         <div className="flex flex-col lg:flex-row gap-5 p-5">
           <div className="lg:w-[60%] w-full">
             <div className="flex items-center justify-between gap-3">
-              <p className="md:text-2xl text-xl">Recent Transactions</p>
+              <p className="md:text-2xl text-xl  font-medium">Recent Transactions</p>
               <div className="">
                 <button
                   onClick={handleButtonClick}
@@ -197,7 +197,7 @@ const OrderPage = () => {
           </div>
           <div className="lg:w-[40%] lg:h-[630px] w-full xl:h-[530px] h-[530px] p-5 bg-(--primary-card-bg) border border-(--primary-border) rounded-lg">
             <div className="flex items-center gap-2 justify-between">
-              <p className="md:text-2xl text-xl">Vesting Schedule</p>
+              <p className="md:text-2xl text-xl  font-bold font-medium">Vesting Schedule</p>
               <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-base py-2 flex gap-2">
                 <Image
                   src="/images/flame.png"

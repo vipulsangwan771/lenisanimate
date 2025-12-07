@@ -29,32 +29,37 @@ const LeaderPage = () => {
           }}
         />
 
-        <div className="relative flex items-center justify-around gap-4">
+        <div className="relative  grid
+                  grid-cols-[10px_15px_2.3fr_1fr_3fr]
+                  md:grid-cols-[18px_15px_2.3fr_1fr_3fr]
+                  xl:grid-cols-[80px_50px_90px_1fr_1fr] gap-4">
           {/* Rank */}
           <div className="flex items-center">
-            <p className="text-5xl" style={{ color: rankColor }}>
+            <p className="xl:text-5xl text-2xl" style={{ color: rankColor }}>
               {rank}
             </p>
           </div>
-          <p>{img && <Image src={img} alt="icon" width={20} height={20} />}</p>
+          <div className="xl:w-[40px] w-[15px]  xl:h-[40px] flex items-center justify-center">
+            {img && <Image src={img} alt="icon" className="xl:w-[30] xl:h-[30]" width={20} height={20} />}
+          </div>
           {/* Image + Name */}
           <div className="flex items-center gap-3">
             <div>
-              <p className="text-xl">Rank {rank}</p>
-              <p className="text-[#FDAE3E]">{title}</p>
+              <p className="xl:text-xl text-base">Rank {rank}</p>
+              <p className="text-[#FDAE3E] xl:text-sm text-[10px]">{title}</p>
             </div>
           </div>
 
           {/* Value */}
-          <div className="text-center">
-            <p className="text-white/60">Value</p>
-            <p>{value}</p>
+          <div className="text-center ">
+            <p className="text-white/60  text-sm">Value</p>
+            <p className=" text-base xl:text-sm text-[10px]">{value}</p>
           </div>
 
           {/* Holdings */}
           <div className="text-right">
-            <p className="text-white/60">Holdings</p>
-            <p>{holdings}</p>
+            <p className="text-white/60 xl:text-sm text-xs">Holdings</p>
+            <p className="md:text-sm text-[10px]">{holdings}</p>
           </div>
         </div>
       </div>
@@ -64,8 +69,8 @@ const LeaderPage = () => {
   return (
     <>
       <div className="bg-(--primary-bg) min-h-screen w-full p-5 pt-10 text-white">
-        <div className=" bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-5">
-          <h1 className="text-2xl">Top 3 Champions</h1>
+        <div className=" bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-5 grid grid-cols-1">
+          <h1 className="text-3xl font-bold">Top 3 Champions</h1>
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-4 w-full">
             <div className="text-center lg:w-[40%]">
               <div className="bgmainimage">
@@ -79,25 +84,35 @@ const LeaderPage = () => {
               <div className="justify-center flex items-center gap-2">
                 <Image
                   src="/images/whale.png"
-                  alt="whale"
+                  alt="whale" 
                   width={50}
                   height={50}
                 />
-                <div className="md:text-3xl text-1xl">Rank 1</div>
+                <div className="md:text-3xl lg:text-2xl text-1xl  font-bold">Rank 1</div>
               </div>
               <p className="text-white/60 md:text-xl text-lg">CryptoWhale</p>
               <div className="mt-10">
                 <p className="text-white/60 text-lg">Holdings</p>
-                <p className="md:text-4xl text-1xl">5,234,567 $TAPZI</p>
+                <p className="md:text-4xl lg:text-3xl text-1xl">5,234,567 $TAPZI</p>
               </div>
             </div>
 
-            <div className="lg:w-[60%] w-full">
-              <div className="flex items-center gap-2 justify-around">
+            <div className="lg:w-[60%] w-full ">
+              <div
+                className="
+                  grid
+                  grid-cols-[4px_5px_2.3fr_1fr_3fr]
+                  xl:grid-cols-[60px_50px_90px_1fr_1fr]
+                  gap-6
+                  px-6
+                  pt-3 text-base
+                "
+              >
                 <p>Rank</p>
+                <p></p>
                 <p>Name</p>
-                <p>Value</p>
-                <p>Holdings</p>
+                <p className="text-center">Value</p>
+                <p className="text-right">Holdings</p>
               </div>
               <ChampionCard
                 rank={2}

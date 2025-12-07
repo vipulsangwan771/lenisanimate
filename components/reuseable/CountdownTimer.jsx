@@ -38,7 +38,7 @@ const CountdownTimer = () => {
 
   return (
     <>
-      <div className="mb-4">
+      <div className="mb-4 font-bold md:text-xl">
         Time Remaining
       </div>
       <div className="gap-3 grid grid-cols-4">

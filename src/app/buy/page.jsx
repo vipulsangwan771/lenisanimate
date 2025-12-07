@@ -2,11 +2,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import CountdownTimer from "@/components/reuseable/CountdownTimer";
+import ChampionCard from "@/components/reuseable/ChampionCard";
 
-const page = () => {
-  const [coinValue, setCoinValue] = useState(0);
-  const min = 10;
-  const max = 100;
+const BuyPage = () => {
+  const MIN_AMOUNT = 0;
+  const MAX_AMOUNT = 1_000_000;
+  const INITIAL_PERCENT = 67.5;
+  const INITIAL_AMOUNT = (INITIAL_PERCENT / 100) * MAX_AMOUNT;
+
+  const [amountRaised, setAmountRaised] = useState(INITIAL_AMOUNT);
+  const progressPercent = ((amountRaised / MAX_AMOUNT) * 100).toFixed(1);
+
+  const formattedAmount = amountRaised.toLocaleString();
 
   const ActivityCard = ({
     username,
@@ -47,69 +54,11 @@ const page = () => {
       </div>
     );
   };
-  const ChampionCard = ({
-    rank,
-    img = null,
-    title,
-    value,
-    holdings,
-    rankColor = "#FFE41B",
-    borderGradient = "linear-gradient(180deg, #8FF557, #0196FD)",
-  }) => {
-    return (
-      <div className="relative mt-3 rounded-lg px-5 py-1 bg-(--seconday-bg) overflow-x-auto lg:overflow-hidden">
-        {/* Gradient border pseudo-element */}
-        <div
-          className="absolute left-0 bottom-0 w-full h-full pointer-events-none rounded-lg"
-          style={{
-            borderLeft: "2px solid transparent",
-            borderBottom: "2px solid transparent",
-            borderRadius: "12px",
-            background: borderGradient,
-            mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            WebkitMask:
-              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            WebkitMaskComposite: "xor",
-            maskComposite: "exclude",
-          }}
-        />
-
-        <div className="relative flex items-center justify-around gap-4">
-          {/* Rank */}
-          <div className="flex items-center">
-            <p className="text-3xl" style={{ color: rankColor }}>
-              {rank}
-            </p>
-          </div>
-          <p>{img && <Image src={img} alt="icon" width={20} height={20} />}</p>
-          {/* Image + Name */}
-          <div className="flex items-center gap-3">
-            <div>
-              <p className="text-xl">Rank {rank}</p>
-              <p className="text-[#FDAE3E]">{title}</p>
-            </div>
-          </div>
-
-          {/* Value */}
-          <div className="text-center">
-            <p className="text-white/60">Value</p>
-            <p>{value}</p>
-          </div>
-
-          {/* Holdings */}
-          <div className="text-right">
-            <p className="text-white/60">Holdings</p>
-            <p>{holdings}</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <>
       <div className="bg-(--primary-bg) min-h-screen w-full  pt-5 text-white ">
-        <div className="pb-4 px-5 text-xl border-b border-gray-700 text-center">
+        <div className="pb-4 px-5 text-3xl border-b border-gray-700 text-center  font-bold">
           BUY TAPZI
         </div>
 
@@ -117,13 +66,18 @@ const page = () => {
           <div className="p-5 w-full xl:w-[60%] bg-(--primary-card-bg) border border-(--primary-border) rounded-lg">
             <div className="flex justify-between gap-3 items-center">
               <div className="">
-                <h2 className="md:text-2xl text-xl">Presale Is Live</h2>
-                <p className="text-white/60 md:text-base text-sm">Limited time offer - Act fast!</p>
+                <h2 className="md:text-2xl text-xl font-medium">
+                  Presale Is Live
+                </h2>
+                <p className="text-white/60 md:text-base text-sm">
+                  Limited time offer - Act fast!
+                </p>
               </div>
               <button className="border border-[#4AFF6B] rounded text-[#4AFF6B] bg-[#041921] px-4 text-base py-1 flex gap-2">
                 <Image
                   src="/images/flame.png"
-                  alt="flame" className="h-5 w-5"
+                  alt="flame"
+                  className="h-5 w-5"
                   width={15}
                   height={1}
                 />
@@ -133,43 +87,53 @@ const page = () => {
             <div className="mt-4 flex items-center gap-3 justify-between">
               <p className="text-white/60">Raised</p>
               <p>
-                <span className="text-2xl text-[#7AFEFF]">$675,432</span>
+                <span className="text-2xl text-[#7AFEFF]">
+                  ${formattedAmount}
+                </span>
                 <span> / $1,000,000</span>{" "}
               </p>
             </div>
             <div className="flex flex-col items-center mt-4 px-3 md:px-0">
               <input
                 type="range"
-                min="10"
-                max="100"
-                step="1"
-                value={coinValue}
-                onChange={(e) => setCoinValue(e.target.value)}
+                min={MIN_AMOUNT}
+                max={MAX_AMOUNT}
+                step={1000}
+                value={amountRaised}
+                onChange={(e) => setAmountRaised(Number(e.target.value))}
                 className="w-full md:w-[100%] h-3  rounded-lg appearance-none cursor-pointer accent-[#27E3E4]
                  transition-all"
                 style={{
-                  background: `linear-gradient(to right, #3C46FF 0%, #42FA31 ${
-                    ((coinValue - min) / (max - min)) * 100
-                  }%, #424242 ${
-                    ((coinValue - min) / (max - min)) * 100
-                  }%, #424242 100%)`,
+                  background: `linear-gradient(
+                  to right,
+                  #3C46FF 0%,
+                  #42FA31 ${(amountRaised / MAX_AMOUNT) * 100}%,
+                  #424242 ${(amountRaised / MAX_AMOUNT) * 100}%,
+                  #424242 100%
+                )`,
                 }}
               />
             </div>
             <div className="mt-4 flex items-center gap-3 justify-between">
               <p className="text-white/60">Progress</p>
-              <p>{coinValue}%</p>
+              <p>{progressPercent}%</p>
             </div>
 
             <div className="mt-5 bg-(--seconday-bg) border border-(--seconday-bg) p-4 rounded-lg">
               <CountdownTimer />
             </div>
 
-            <div className="mt-5 text-lg md:text-3xl">Choose Payment Method</div>
+            <div className="mt-5 text-lg md:text-3xl font-bold">
+              Choose Payment Method
+            </div>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
-              <button className="bg-(--primary-sky) hover:bg-(--primary-hover-sky)  text-(--primary-bg) rounded-md
-               cursor-pointer px-3 py-3 flex gap-3 items-center justify-center">
-                <p className="lg:text-xl md:text-sm text-lg">Buy With Crypto</p>
+              <button
+                className="bg-(--primary-sky) hover:bg-(--primary-hover-sky)  text-(--primary-bg) rounded-md
+               cursor-pointer px-3 py-3 flex gap-3 items-center justify-center"
+              >
+                <p className="lg:text-xl md:text-sm font-bold text-lg">
+                  Buy With Crypto
+                </p>
                 <Image
                   src="/images/bitcoin.png"
                   alt="wewc"
@@ -177,9 +141,13 @@ const page = () => {
                   height={20}
                 />
               </button>
-              <button className="bg-(--primary-sky) hover:bg-(--primary-hover-sky) text-(--primary-bg) rounded-md 
-              cursor-pointer px-3 py-3 flex gap-3 items-center justify-center">
-                <p className="lg:text-xl  md:text-base text-lg">Buy With Card</p>
+              <button
+                className="bg-(--primary-sky) hover:bg-(--primary-hover-sky) text-(--primary-bg) rounded-md 
+              cursor-pointer px-3 py-3 flex gap-3 items-center justify-center"
+              >
+                <p className="lg:text-xl font-bold md:text-base text-lg">
+                  Buy With Card
+                </p>
                 <Image
                   src="/images/visa.png"
                   alt="wewc"
@@ -191,12 +159,12 @@ const page = () => {
 
             <div className="mt-8 rounded-full bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3">
               <div className="flex items-center gap-3 justify-center">
-                <p className="md:text-lg text-[10px]">
+                <p className="md:text-lg text-[10px] font-bold">
                   Presale Price =
                   <span className="text-(--primary-sky)">$0.0035</span>
                 </p>
                 |
-                <p className="md:text-lg text-[10px]">
+                <p className="md:text-lg text-[10px] font-bold">
                   Launch Price =
                   <span className="text-(--primary-sky)">$0.09</span>
                 </p>
@@ -248,7 +216,7 @@ const page = () => {
             </div>
 
             <button
-              className="text-(--primary-bg) bg-(--primary-sky) hover:bg-(--primary-hover-sky) mt-4 rounded-md cursor-pointer
+              className="text-(--primary-bg) font-bold bg-(--primary-sky) hover:bg-(--primary-hover-sky) mt-4 rounded-md cursor-pointer
             flex justify-center w-full px-3 py-4 text-lg md:text-2xl"
             >
               Connect Wallet To Continue
@@ -267,7 +235,7 @@ const page = () => {
               <div className="flex items-center  justify-center md:justify-start gap-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <p className="text-xl">Live Activity</p>
+                  <p className="text-xl font-medium">Live Activity</p>
                 </div>
                 <button className="text-sm border border-(--primary-green) text-(--primary-green) px-4 rounded">
                   LIVE
@@ -307,16 +275,26 @@ const page = () => {
             </div>
 
             <div className="bg-(--primary-card-bg) border w-full pb-5 border-(--primary-border) rounded-lg px-5 h-auto w-full mt-5 py-4x">
-              <div className="flex items-center gap-2 justify-around pt-3">
+              <div
+                className="
+                  grid
+                  grid-cols-[8px_5px_2.3fr_1fr_3fr]
+                  md:grid-cols-[20px_25px_1.3fr_1.5fr_3fr]
+                  gap-6
+                  px-6
+                  pt-3 text-base
+                "
+              >
                 <p>Rank</p>
+                <p></p>
                 <p>Name</p>
-                <p>Value</p>
-                <p>Holdings</p>
+                <p className="text-center">Value</p>
+                <p className="text-right">Holdings</p>
               </div>
               <ChampionCard
                 rank={2}
                 img="/images/diamond.png" // optional
-                title="DiamondHands"
+                title="DiamondHand"
                 value="$15,434.00"
                 holdings="4,523,890 $TAPZI"
                 rankColor="#FFD700" // custom rank color
@@ -336,7 +314,7 @@ const page = () => {
                 img="" // optional
                 title="InvestorPro"
                 value="$13,434.00"
-                holdings="3,467,234 $TAPZI"
+                holdings="4,467,234 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />
@@ -345,16 +323,16 @@ const page = () => {
                 img="" // optional
                 title="HODLMaster"
                 value="$13,334.00"
-                holdings="3,367,234 $TAPZI"
+                holdings="4,367,234 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
               <ChampionCard
                 rank={6}
                 img="" // optional
-                title="TokenKing"
+                title="TokenKings"
                 value="$13,234.00"
-                holdings="3,267,234 $TAPZI"
+                holdings="4,267,234 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -363,7 +341,7 @@ const page = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,134.00"
-                holdings="3,167,234 $TAPZI"
+                holdings="4,167,234 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -372,7 +350,7 @@ const page = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,034.00"
-                holdings="3,067,234 $TAPZI"
+                holdings="4,067,234 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -380,8 +358,8 @@ const page = () => {
                 rank={9}
                 img="" // optional
                 title="CryptoLord"
-                value="$13,14.00"
-                holdings="3,17,234 $TAPZI"
+                value="$103,14.00"
+                holdings="4,17,2034 $TAPZI"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />
@@ -393,4 +371,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default BuyPage;

@@ -143,7 +143,7 @@ export default function Home() {
               <div className="flex items-center  justify-center md:justify-start gap-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <p className="text-xl">Live Activity</p>
+                  <p className="text-xl font-medium">Live Activity</p>
                 </div>
                 <button className=" border border-(--primary-green) text-(--primary-green) px-4 rounded">
                   LIVE
@@ -179,7 +179,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="my-5 md:text-3xl text-center md:text-left text-xl">
+        <div className="my-5 md:text-3xl text-center md:text-left text-xl font-medium">
           Rewards by Your Rank
         </div>
         {/* BELOW lg → SLIDER */}

@@ -39,7 +39,7 @@ const ProfilePage = () => {
       {/* WALLET SECTION */}
       <div className="flex flex-col lg:flex-row gap-3 h-fit mt-6">
         <div className="w-full lg:w-[73%] bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-4">
-          <h2 className="text-3xl text-center md:text-left">Wallet</h2>
+          <h2 className="text-3xl text-center md:text-left  font-bold">Wallet</h2>
 
           {/* Wallet Address Box */}
           <p className="opacity-[70%] mt-5">Wallet Address</p>
@@ -104,7 +104,7 @@ const ProfilePage = () => {
 
         {/* TOKEN DISTRIBUTION */}
         <div className="flex-1 bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-4">
-          <p className="text-center text-xl">Token Distribution</p>
+          <p className="text-center text-xl  font-bold">Token Distribution</p>
 
           <div className="mt-8 flex items-center justify-between px-3 gap-5">
             <div className="space-y-1">
@@ -139,7 +139,7 @@ const ProfilePage = () => {
       {/* PRODUCTS */}
       <div className="w-full my-6 bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-4">
         <div className="flex gap-3 items-center justify-center md:justify-between">
-          <h2 className="text-2xl">Products & Assets</h2>
+          <h2 className="text-2xl  font-bold">Products & Assets</h2>
           <p className="opacity-[65%] hidden md:block text-[10px]">3/7</p>
         </div>
 
