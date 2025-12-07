@@ -204,3 +204,8 @@ body {
 .lenis {
   height: 100%;
 }
+html,
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}

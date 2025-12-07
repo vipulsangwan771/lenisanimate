@@ -12,8 +12,11 @@ export default function LenisProvider({ children }) {
     const lenis = new Lenis({
       duration: 1.1,
       smoothWheel: true,
-      smoothTouch: false,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothTouch: true,
+      touchMultiplier: 1.5,
+
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
     // ✅ SYNC LENIS → GSAP
