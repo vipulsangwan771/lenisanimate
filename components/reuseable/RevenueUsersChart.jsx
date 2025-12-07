@@ -71,7 +71,7 @@ export default function RevenueUsersChart() {
       </div>
 
       {/* Chart */}
-      <div className="w-full  min-h-[300px]">
+      <div className="w-full  min-h-[300px] overflow-hidden">
         <ResponsiveContainer width="100%" height={300}>
           <ComposedChart data={data}>
             <defs>
