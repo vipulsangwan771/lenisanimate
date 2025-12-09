@@ -100,13 +100,15 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className="border-b border-gray-700 bg-(--primary-bg) text-white md:hidden block flex items-center justify-center">
-        <img
-          src="/images/mainlogo.png"
-          className="w-25 mx-auto h-15 "
-          alt="main logo"
-        />
-      </div>
+    <div className="fixed top-0 left-0 z-10 w-full border-b border-gray-700 bg-(--primary-bg) text-white
+     md:hidden flex items-center justify-center">
+  <img
+    src="/images/mainlogo.png"
+    className="w-25 h-15"
+    alt="main logo"
+  />
+</div>
+
     </>
   );
 };

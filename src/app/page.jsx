@@ -116,7 +116,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-(--primary-bg) min-h-screen w-full p-5 md:pt-10 text-white">
+      <div className="bg-(--primary-bg) min-h-screen w-full p-5 pt-20 md:pt-10 text-white">
         <div className="block md:hidden">
           <div className="text-center gap-4 mb-5">
             <div className="flex items-center gap-4 justify-center">

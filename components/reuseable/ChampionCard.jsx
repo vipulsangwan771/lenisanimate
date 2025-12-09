@@ -28,12 +28,14 @@ const ChampionCard = ({
         className="
         relative
         grid
-        grid-cols-[8px_5px_1fr_1fr_10fr]
-        md:grid-cols-[20px_25px_2fr_1.5fr_8fr]
+        grid-cols-[8px_5px_62px_1fr_10fr]
+        md:grid-cols-[20px_25px_70px_1.5fr_8fr]
+        lg:grid-cols-[20px_25px_4fr_1.5fr_8fr]
+        xl:grid-cols-[20px_25px_6fr_1.5fr_8fr]
         items-center
         gap-6
         px-6
-        py-3
+        py-3 overflow-auto
       "
       >
         {/* Rank */}
@@ -63,7 +65,7 @@ const ChampionCard = ({
 
         {/* Holdings */}
         <div className="text-right">
-          <p className="text-white/60 text-xs">Holdings</p>
+          <p className="text-white/60 text-xs">$TAPZI</p>
           <p className="md:text-sm text-[10px]">{holdings}</p>
         </div>
       </div>

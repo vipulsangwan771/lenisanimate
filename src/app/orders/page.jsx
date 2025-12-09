@@ -2,9 +2,6 @@
 import TransactionCard from "@/components/reuseable/TransactionCard ";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { FcUnlock } from "react-icons/fc";
-import { IoIosLock } from "react-icons/io";
-
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
 const OrderPage = () => {
@@ -89,7 +86,7 @@ const OrderPage = () => {
 
   return (
     <>
-      <div className="bg-(--primary-bg) min-h-screen w-full pt-5 text-white">
+      <div className="bg-(--primary-bg) min-h-screen w-full md:pt-5 pt-20 text-white">
         <div className="pb-4 px-5 text-2xl border-b border-gray-700 text-center  font-bold">
           Portfolio Overview
         </div>

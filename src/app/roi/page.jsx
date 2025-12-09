@@ -8,7 +8,7 @@ const RoiPage = () => {
   const max = 100;
 
   return (
-    <div className="bg-(--primary-bg) min-h-screen w-full p-5 pt-10 text-white">
+    <div className="bg-(--primary-bg) min-h-screen w-full p-5 md:pt-10 pt-20 text-white">
       {/* Tabs */}
       <div
         className="flex gap-1 justify-between md:max-w-[435] mx-[auto] border bg-(--primary-card-bg) rounded-lg 

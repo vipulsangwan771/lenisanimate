@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <AppSidebar />
             <main className="w-full">
               <Navbar />
-              <SidebarTrigger className="absolute top-1 left-4 text-white md:hidden block" />
+              <SidebarTrigger className="fixed top-1 left-1 z-10 left-4 text-white md:hidden block" />
               {children}
             </main>
           </SidebarProvider>

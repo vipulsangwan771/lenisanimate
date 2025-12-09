@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import CountdownTimer from "@/components/reuseable/CountdownTimer";
 import ChampionCard from "@/components/reuseable/ChampionCard";
@@ -9,7 +9,8 @@ const BuyPage = () => {
   const MAX_AMOUNT = 1_000_000;
   const INITIAL_PERCENT = 67.5;
   const INITIAL_AMOUNT = (INITIAL_PERCENT / 100) * MAX_AMOUNT;
-
+  const inputRef = useRef(null);
+  const [coValue, setCoValue] = useState("1");
   const [amountRaised, setAmountRaised] = useState(INITIAL_AMOUNT);
   const progressPercent = ((amountRaised / MAX_AMOUNT) * 100).toFixed(1);
 
@@ -54,10 +55,23 @@ const BuyPage = () => {
       </div>
     );
   };
+  const handleBuyWithCrypto = () => {
+    if (inputRef.current) {
+      inputRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+
+      // Small delay so scroll completes before focus
+      setTimeout(() => {
+        inputRef.current.focus();
+      }, 300);
+    }
+  };
 
   return (
     <>
-      <div className="bg-(--primary-bg) min-h-screen w-full  pt-5 text-white ">
+      <div className="bg-(--primary-bg) min-h-screen w-full md:pt-5 pt-20 text-white ">
         <div className="pb-4 px-5 text-3xl border-b border-gray-700 text-center  font-bold">
           BUY TAPZI
         </div>
@@ -128,6 +142,7 @@ const BuyPage = () => {
             </div>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
               <button
+                onClick={handleBuyWithCrypto}
                 className="bg-(--primary-sky) hover:bg-(--primary-hover-sky)  text-(--primary-bg) rounded-md
                cursor-pointer px-3 py-3 flex gap-3 items-center justify-center"
               >
@@ -174,7 +189,16 @@ const BuyPage = () => {
             <div className="mt-8 rounded-lg bg-(--seconday-bg) border border-(--primary-border)  px-5 py-3 flex items-center gap-3 justify-between">
               <div className="">
                 <p className="text-xs">You Pay inETH:</p>
-                <p className="text-xl">1</p>
+                <p className="text-xl">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    className="mt-1 rounded-full px-3 max-w-[200px] w-[90px]"
+                    value={coValue}
+                     onChange={(e) => setCoValue(e.target.value)}
+                    placeholder="Enter Amount"
+                  />
+                </p>
               </div>
               <button
                 className="bg-(--primary-card-bg) rounded-full border border-(--primary-border) flex items-center gap-1 justify-center
@@ -278,25 +302,28 @@ const BuyPage = () => {
               <div
                 className="
                   grid
-                  grid-cols-[8px_5px_2.3fr_1fr_3fr]
-                  md:grid-cols-[20px_25px_1.3fr_1.5fr_3fr]
+                  grid-cols-[8px_5px_67px_2fr_3fr]
+                  md:grid-cols-[20px_28px_1.7fr_1.5fr_3fr]
+                  lg:grid-cols-[20px_25px_1.3fr_1.5fr_3fr]
+                  xl:grid-cols-[20px_30px_2fr_1.5fr_3fr]
                   gap-6
-                  px-6
-                  pt-3 text-base
+                  px-5
+                  md:px-5
+                  pt-3 text-sm md:text-base  overflow-auto
                 "
               >
                 <p>Rank</p>
                 <p></p>
                 <p>Name</p>
                 <p className="text-center">Value</p>
-                <p className="text-right">Holdings</p>
+                <p className="text-right">$TAPZI</p>
               </div>
               <ChampionCard
                 rank={2}
                 img="/images/diamond.png" // optional
                 title="DiamondHand"
                 value="$15,434.00"
-                holdings="4,523,890 $TAPZI"
+                holdings="4,523,890"
                 rankColor="#FFD700" // custom rank color
                 borderGradient="linear-gradient(180deg, #8ff557, #0196fd)" // custom gradient
               />
@@ -305,7 +332,7 @@ const BuyPage = () => {
                 img="/images/chain.png" // optional
                 title="TokenMaster"
                 value="$14,434.00"
-                holdings="4,123,890 $TAPZI"
+                holdings="4,123,890"
                 rankColor="#79C7FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #2696FE, #FDFD01)" // custom gradient
               />
@@ -314,7 +341,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="InvestorPro"
                 value="$13,434.00"
-                holdings="4,467,234 $TAPZI"
+                holdings="4,467,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />
@@ -323,7 +350,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="HODLMaster"
                 value="$13,334.00"
-                holdings="4,367,234 $TAPZI"
+                holdings="4,367,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -332,7 +359,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="TokenKings"
                 value="$13,234.00"
-                holdings="4,267,234 $TAPZI"
+                holdings="4,267,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -341,7 +368,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,134.00"
-                holdings="4,167,234 $TAPZI"
+                holdings="4,167,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -350,7 +377,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,034.00"
-                holdings="4,067,234 $TAPZI"
+                holdings="4,067,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -359,7 +386,7 @@ const BuyPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$103,14.00"
-                holdings="4,17,2034 $TAPZI"
+                holdings="4,17,2034"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />

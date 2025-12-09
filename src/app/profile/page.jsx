@@ -32,7 +32,7 @@ const InfoRow = ({ icon, title, value }) => (
 
 const ProfilePage = () => {
   return (
-    <div className="bg-(--primary-bg) min-h-screen w-full p-5 pt-10 text-white">
+    <div className="bg-(--primary-bg) min-h-screen w-full p-5  pt-20 md:pt-10 text-white">
       {/* TOP CARDS */}
       <TopCards />
 

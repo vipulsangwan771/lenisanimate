@@ -62,7 +62,7 @@ const Page = () => {
     );
   };
   return (
-    <div className="bg-(--primary-bg) min-h-screen p-5 pt-10 text-white">
+    <div className="bg-(--primary-bg) min-h-screen p-5  pt-20 md:pt-10 text-white">
       <div className="bg-(--primary-card-bg) border border-(--primary-border) rounded-lg px-5 py-3">
         <h2 className="text-3xl font-medium">Your Referral Link</h2>
         <h4 className="text-white/60 mt-2">

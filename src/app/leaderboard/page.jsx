@@ -30,7 +30,7 @@ const LeaderPage = () => {
         />
 
         <div className="relative  grid
-                  grid-cols-[10px_15px_2.3fr_1fr_3fr]
+                  grid-cols-[10px_15px_70px_1fr_3fr]
                   md:grid-cols-[18px_15px_2.3fr_1fr_3fr]
                   xl:grid-cols-[80px_50px_90px_1fr_1fr] gap-4">
           {/* Rank */}
@@ -58,7 +58,7 @@ const LeaderPage = () => {
 
           {/* Holdings */}
           <div className="text-right">
-            <p className="text-white/60 xl:text-sm text-xs">Holdings</p>
+            <p className="text-white/60 xl:text-sm text-xs">$TAPZI</p>
             <p className="md:text-sm text-[10px]">{holdings}</p>
           </div>
         </div>
@@ -68,11 +68,11 @@ const LeaderPage = () => {
 
   return (
     <>
-      <div className="bg-(--primary-bg) min-h-screen w-full p-5 pt-10 text-white">
+      <div className="bg-(--primary-bg) min-h-screen w-full p-5 md:pt-5 pt-20  text-white">
         <div className=" bg-(--primary-card-bg) border border-(--primary-border) rounded-lg p-5 grid grid-cols-1">
           <h1 className="text-3xl font-bold">Top 3 Champions</h1>
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-4 w-full">
-            <div className="text-center lg:w-[40%]">
+            <div className="text-center flex flex-col justify-center items-center lg:w-[40%]">
               <div className="bgmainimage">
                 <Image
                   src="/images/tropy.png"
@@ -88,9 +88,9 @@ const LeaderPage = () => {
                   width={50}
                   height={50}
                 />
-                <div className="md:text-3xl lg:text-2xl text-1xl  font-bold">Rank 1</div>
+                <div className="text-3xl lg:text-2xl  font-bold">Rank 1</div>
               </div>
-              <p className="text-white/60 md:text-xl text-lg">CryptoWhale</p>
+              <p className="text-white/60 md:text-xl text-xl">CryptoWhale</p>
               <div className="mt-10">
                 <p className="text-white/60 text-lg">Holdings</p>
                 <p className="md:text-4xl lg:text-3xl text-1xl">5,234,567 $TAPZI</p>
@@ -101,7 +101,8 @@ const LeaderPage = () => {
               <div
                 className="
                   grid
-                  grid-cols-[4px_5px_2.3fr_1fr_3fr]
+                  grid-cols-[4px_5px_60px_1fr_3fr]
+                  md:grid-cols-[4px_5px_2.3fr_1fr_3fr]
                   xl:grid-cols-[60px_50px_90px_1fr_1fr]
                   gap-6
                   px-6
@@ -112,23 +113,23 @@ const LeaderPage = () => {
                 <p></p>
                 <p>Name</p>
                 <p className="text-center">Value</p>
-                <p className="text-right">Holdings</p>
+                <p className="text-right">$TAPZI</p>
               </div>
               <ChampionCard
                 rank={2}
                 img="/images/diamond.png" // optional
-                title="DiamondHands"
+                title="DiamondHand"
                 value="$15,434.00"
-                holdings="4,523,890 $TAPZI"
+                holdings="4,523,890"
                 rankColor="#FFD700" // custom rank color
                 borderGradient="linear-gradient(180deg, #8ff557, #0196fd)" // custom gradient
               />
               <ChampionCard
                 rank={3}
                 img="/images/chain.png" // optional
-                title="TokenMaster"
+                title="TokenMaster "
                 value="$14,434.00"
-                holdings="4,123,890 $TAPZI"
+                holdings="4,123,890"
                 rankColor="#79C7FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #2696FE, #FDFD01)" // custom gradient
               />
@@ -137,7 +138,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="InvestorPro"
                 value="$13,434.00"
-                holdings="3,467,234 $TAPZI"
+                holdings="3,467,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />
@@ -146,7 +147,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="HODLMaster"
                 value="$13,334.00"
-                holdings="3,367,234 $TAPZI"
+                holdings="3,367,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -155,7 +156,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="TokenKing"
                 value="$13,234.00"
-                holdings="3,267,234 $TAPZI"
+                holdings="3,267,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -164,7 +165,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,134.00"
-                holdings="3,167,234 $TAPZI"
+                holdings="3,167,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -173,7 +174,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,034.00"
-                holdings="3,067,234 $TAPZI"
+                holdings="3,067,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />{" "}
@@ -182,7 +183,7 @@ const LeaderPage = () => {
                 img="" // optional
                 title="CryptoLord"
                 value="$13,14.00"
-                holdings="3,17,234 $TAPZI"
+                holdings="3,17,234"
                 rankColor="#E4F4FF" // custom rank color
                 borderGradient="linear-gradient(180deg, #63A2FF, #F8FBFF)" // custom gradient
               />
